@@ -69,7 +69,7 @@ public class GestorTareas {
         } else {
             Tarea rec = cab;
             while (rec != null) {
-                //Compara las tareas para ver si están o no
+                //Compara las tareas para verificar si están o no
                 if (rec.getDescripcionTarea().equalsIgnoreCase(descripcionTareaBuscada)) {
                     return true;
                 }
