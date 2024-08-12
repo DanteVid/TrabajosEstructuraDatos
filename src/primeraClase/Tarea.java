@@ -26,6 +26,7 @@ public class Tarea {
     }
 
     public String toString(){
+        //Modificar el metodo para que solo imprima el texto
         return descripcionTarea;
     }
 }

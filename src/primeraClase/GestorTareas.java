@@ -14,6 +14,7 @@ public class GestorTareas {
             //Verificar si está o no, si ya está, tira el mensaje de error y no hace nada
         } else {
             Tarea rec = cab;
+            //Recorre la lista hasta el último elemento
             while(rec.getSgte()!=null){
                 rec = rec.getSgte();
             }
@@ -27,6 +28,7 @@ public class GestorTareas {
             return;
         } else {
             Tarea rec = cab;
+            //Imprime los elementos uno por uno
             while (rec != null) {
                 System.out.println(rec);
                 rec = rec.getSgte();
@@ -36,15 +38,19 @@ public class GestorTareas {
 
     public void eliminarTarea(String descripcionTareaBuscada) {
         if (cab == null) {
+            //Verificar que esté vacía
             System.out.println("¡La lista está vacía!");
         } else if (cab.getDescripcionTarea().equalsIgnoreCase(descripcionTareaBuscada)) {
+            //Verificar si es el primer elemento para borrarlo adecuadamente
             cab = cab.getSgte();
             System.out.println("Tarea/nombre borrad@ con éxito");
         } else {
             Tarea rec = cab.getSgte();
             Tarea ant = cab;
+            //Recorrer toda la lista para encontrar la tarea a borrar
             while (rec != null) {
                 if (rec.getDescripcionTarea().equalsIgnoreCase(descripcionTareaBuscada)) {
+                    //Eliminar el elemento de forma apropiada si es encontrado
                     ant.setSgte(rec.getSgte());
                     System.out.println("Tarea/nombre borrad@ con éxito");
                     return;
@@ -52,6 +58,7 @@ public class GestorTareas {
                 ant = rec;
                 rec = rec.getSgte();
             }
+            //Si no se encuentra en la lista, suelta un mensaje de error y no hace nada
             System.out.println("Tarea/nombre no está en la lista");
         }
     }
@@ -62,6 +69,7 @@ public class GestorTareas {
         } else {
             Tarea rec = cab;
             while (rec != null) {
+                //Compara las tareas para ver si están o no
                 if (rec.getDescripcionTarea().equalsIgnoreCase(descripcionTareaBuscada)) {
                     return true;
                 }
