@@ -1,1 +1,51 @@
+Complejidades temporales:
 
+Ej 1: Complejidad O(1)
+
+public void printFirstElement(int[] arr) { 
+    if (arr.length > 0) { O(1)
+        System.out.println(arr[0]); O(1)
+    }
+}
+O(1)*O(1) = O(1) -> O(1)
+
+Ej 2: Complejidad O(n)
+
+public void printAllElements(int[] arr) { 
+    for (int element : arr) { O(n)
+        System.out.println(element); O(1)
+    }
+}
+O(n)*O(1) = O(n) -> O(n)
+
+Ej 3: Complejidad O(n^2)
+
+public void printAllPairs(int[] arr) { 
+    for (int i = 0; i < arr.length; i++) { O(n)
+        for (int j = 0; j < arr.length; j++) { O(n)
+            System.out.println(arr[i] + ", " + arr[j]); O(1)
+        }
+    }
+}
+
+O(n)*O(n)*O(1) = O(n^2) -> O(n)
+
+Ejemplo 4: Complejidad O(
+
+public int binarySearch(int[] arr, int target) {
+    int low = 0; O(1)
+    int high = arr.length - 1; O(1)
+
+    while (low <= high) { O(n)
+        int mid = (low + high) / 2; O(1)
+        if (arr[mid] == target) { O(1)
+            return mid; O(1)
+        } else if (arr[mid] < target) { O(1)
+            low = mid + 1; O(1)
+        } else { O(1)
+            high = mid - 1; O(1)
+        }
+    }
+    return -1; O(1)
+}
+O(1)+O(1)+(O(n)*(O(1)) = O(n^2) -> O(n)
