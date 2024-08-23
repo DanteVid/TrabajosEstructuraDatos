@@ -57,3 +57,11 @@ public class Main {
         System.out.println("Tiempo promedio con el método que usa recursividad: " + (tiempoPromedioRecursividad));
     }
 }
+
+//Para valores pequeños, el método que usa recursividad es más rápido que el del for;
+//sin embargo, a partir del 7 número de Fibonacci esto cambia y el método de recursividad
+//incrementa su tiempo de carga promedio mucho más que el del for, lo que indica
+//una mayor complejidad. El for tiene complejidad O(n), y para que el de recursividad
+//aumente tan vertiginosamente, podría ser que tiene una complejidad O(n log(n)), cuya curva
+//sólo es menor que la del for en los valores iniciales.
+
