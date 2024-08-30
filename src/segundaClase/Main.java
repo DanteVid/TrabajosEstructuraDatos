@@ -63,7 +63,6 @@ public class Main {
 //incrementa su tiempo de carga promedio mucho más que el del for, lo que indica
 //una mayor complejidad. El for tiene complejidad O(n), y para que el de recursividad
 //aumente tan vertiginosamente, podría ser que tiene una complejidad O(n log(n)), cuya curva
-//sólo es menor que la del for en los valores iniciales. Se puede deducir que esta complejidad
+//sea menor que la del for en los valores iniciales. Se puede deducir que esta complejidad
 //incrementada es el resultado de que la función tenga que llamarse a sí misma una y otra y otra
 //vez creando varios bucles, a diferencia del for donde el cálculo se hace en un solo loop.
-
