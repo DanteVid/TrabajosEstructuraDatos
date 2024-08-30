@@ -15,15 +15,16 @@ public class Optimizacion {
         return false;
     }
 
-    public static boolean hasDuplicateOptimizado(int[] arr) {
-        Arrays.sort(arr);
-        for (int i = 0; i < arr.length-1; i++) {
+    public static boolean hasDuplicateOptimizado(int[] arr) {  //O(n log(n) + O(n) = O(nlog(n))
+        Arrays.sort(arr); //O(nlog(n))
+        for (int i = 0; i < arr.length-1; i++) { //O(n)
             if(arr[i]==arr[i+1]){
                 return true;
             }
         }
         return false;
     }
+
     public static void main(String[] args) {
         int[] a = {5,412,6,78,56,2342,2,6};
         if(hasDuplicate(a)){
