@@ -9,6 +9,7 @@ public void printFirstElement(int[] arr) {
 }
 O(1)*O(1) = O(1) -> O(1)
 
+
 Ej 2: Complejidad O(n)
 
 public void printAllElements(int[] arr) { 
@@ -17,6 +18,7 @@ public void printAllElements(int[] arr) {
     }
 }
 O(n)*O(1) = O(n) -> O(n)
+
 
 Ej 3: Complejidad O(n^2)
 
@@ -30,7 +32,8 @@ public void printAllPairs(int[] arr) {
 
 O(n)*O(n)*O(1) = O(n^2) -> O(n)
 
-Ejemplo 4: Complejidad O(
+
+Ejemplo 4: Complejidad O(n)
 
 public int binarySearch(int[] arr, int target) {
     int low = 0; O(1)
@@ -48,4 +51,27 @@ public int binarySearch(int[] arr, int target) {
     }
     return -1; O(1)
 }
-O(1)+O(1)+(O(n)*(O(1)) = O(n^2) -> O(n)
+O(1)+O(1)+(O(n)*(O(1)) = O(n)
+
+
+Ejemplo 5: Complejidad O(2^n)
+public int fibonacci(int n) {
+    if (n <= 1) { O(1)
+        return n; O(1)
+    } else { O(1)
+        return fibonacci(n - 1) + fibonacci(n - 2); O(2^n) (El árbol de recursividad es binario)
+    }
+}
+O(1)*O(1)+(O(1)*(O(2^n)) = O(2^n)
+
+
+Ejemplo 6: Complejidad O(n log(n))
+import java.util.Arrays; O(1)
+
+public void sortAndPrint(int[] arr) {
+    Arrays.sort(arr); // Complejidad O(n log n) 
+    for (int element : arr) { O(n)
+        System.out.println(element); O(1)
+    }
+}
+O(n)+O(n log(n)) = O(n log(n))
