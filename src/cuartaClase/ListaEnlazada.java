@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class ListaEnlazada {
     private Nodo cab;
-    Scanner scanner = new Scanner(System.in);
 
     public void insertarComienzo(Nodo nuevo){
         if (cab != null) {
@@ -34,7 +33,9 @@ public class ListaEnlazada {
             }else {
                 System.out.println("Nodo no encontrado");
             }
-        }else{
+        } else if (cab.getNumero()==num){
+            cab = cab.getSgte();
+        } else{
             Nodo ant = cab;
             Nodo rec = cab.getSgte();
             while (rec != null){
@@ -64,16 +65,25 @@ public class ListaEnlazada {
         }
     }
 
-    public void añadirNodo(Nodo nuevo){
-        System.out.println("Por favor ingresa la posición donde quieres poner tu nodo (se cuenta desde 1)");
-        int pos = scanner.nextInt();
-        scanner.nextLine();
+    public void anadirNodo(Nodo nuevo, int pos){
         if (pos == 1){
-            if (cab != null) {
-                nuevo.setSgte(cab);
-            }
+            nuevo.setSgte(cab);
             cab = nuevo;
+            return;
+        }
+        int i = 1;
+        Nodo rec = cab;
+        while(rec != null && i<pos-1){
+            rec = rec.getSgte();
+            i++;
         }
 
+        if(rec == null){
+            System.out.println("Esa posición está fuera de la lista!");
+            return;
+        }
+
+        nuevo.setSgte(rec.getSgte());
+        rec.setSgte(nuevo);
     }
 }
