@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        ListaDoblementeEnlazada listadob = new ListaDoblementeEnlazada();
         Scanner scanner = new Scanner(System.in);
         int op = 0;
         int data = 0;
@@ -28,7 +29,7 @@ public class Main {
                         System.out.println("Escribe el número del nuevo nodo:");
                         data = scanner.nextInt();
                         scanner.nextLine();
-
+                        
                 }
             }
 
