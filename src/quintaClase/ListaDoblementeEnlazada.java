@@ -8,8 +8,8 @@ public class ListaDoblementeEnlazada {
     private Nodo cab;
     private Nodo cola;
 
-    public void agregarComienzo(int data){
-        Nodo nuevo = new Nodo(data,null, null);
+    public void agregarComienzo(int num){
+        Nodo nuevo = new Nodo(num,null, null);
         if (cab == null){
             cab = nuevo;
             cola = nuevo;
@@ -52,6 +52,15 @@ public class ListaDoblementeEnlazada {
             }
             rec = rec.getSgte();
         }
+    }
+
+    public void imprimir(){
+        Nodo rec = cab;
+        while (rec != null){
+            System.out.println(rec);
+            rec = rec.getSgte();
+        }
+        System.out.println();
     }
 
     public void imprimirReversa(){
