@@ -8,16 +8,16 @@ public class ListaCircularDobEnlazada {
     
     public void agregarNodo(int num) {
         Nodo nuevo = new Nodo(num);
-        if (cabeza == null) {
-            cabeza = nuevoNodo;
-            cola = nuevoNodo;
-            cabeza.setSgte(cabeza);
-            cabeza.setPrev(cabeza);
+        if (cab == null) {
+            cab = nuevo;
+            cola = nuevo;
+            cab.setSgte(cab);
+            cab.setPrev(cab);
         } else {
-            cola.setSgte(nuevoNodo);
-            cabeza.setPrev(nuevoNodo);
-            cola = nuevoNodo;
-            cola.setSgte(cabeza);
+            cola.setSgte(nuevo);
+            cab.setPrev(nuevo);
+            cola = nuevo;
+            cola.setSgte(cab);
         }
     }
 
