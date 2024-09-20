@@ -23,6 +23,17 @@ public class Pila {
         }
     }
 
+    public void push(String a){
+        Nodo nuevo = new Nodo(a);
+        if (top == null){
+            top = nuevo;
+            bottom = nuevo;
+        }else {
+            nuevo.setSgte(top);
+            top = nuevo;
+        }
+    }
+
     public void pop(){
         if (top == null){
             System.out.println("Pila vacía, está mal la expresión");
@@ -30,5 +41,9 @@ public class Pila {
         }else {
             top = top.getSgte();
         }
+    }
+
+    public Nodo peek(){
+        return top;
     }
 }

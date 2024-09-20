@@ -67,6 +67,22 @@ public class Nodo {
         this.prev = prev;
     }
 
+    public String getData() {
+        return data;
+    }
+
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    public char getLetra() {
+        return letra;
+    }
+
+    public void setLetra(char letra) {
+        this.letra = letra;
+    }
+
     public String toString(){
         return String.valueOf(numero);
     }
