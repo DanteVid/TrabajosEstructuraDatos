@@ -3,6 +3,9 @@ package cuartaClase;
 import primeraClase.Tarea;
 
 public class Nodo {
+
+    private String data;
+    private char letra;
     private int numero;
     private Nodo sgte;
     private Nodo prev;
@@ -14,6 +17,24 @@ public class Nodo {
     public Nodo(int numero, Nodo sgte) {
         this.numero = numero;
         this.sgte = sgte;
+    }
+
+    public Nodo(String data, Nodo sgte) {
+        this.data = data;
+        this.sgte = sgte;
+    }
+
+    public Nodo(String data) {
+        this.data = data;
+    }
+
+    public Nodo(char letra, Nodo sgte) {
+        this.letra = letra;
+        this.sgte = sgte;
+    }
+
+    public Nodo(char letra) {
+        this.letra = letra;
     }
 
     public Nodo(int numero, Nodo sgte, Nodo prev) {
