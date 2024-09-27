@@ -83,7 +83,7 @@ public class Nodo {
         this.letra = letra;
     }
 
-    public String toString(){
+    public String toString() {
         return String.valueOf(numero);
     }
 }
