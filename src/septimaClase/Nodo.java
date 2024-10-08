@@ -33,6 +33,14 @@ public class Nodo {
         this.izq = new Nodo(a);
     }
 
+    public void setIzq(Nodo izq) {
+        this.izq = izq;
+    }
+
+    public void setDer(Nodo der) {
+        this.der = der;
+    }
+
     public Nodo getDer() {
         return der;
     }
