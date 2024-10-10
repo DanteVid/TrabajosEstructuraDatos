@@ -22,25 +22,29 @@ public class Main {
     }
 
     public static Nodo borrar(Nodo nodo, char letra){
-        if (nodo == null){
-            return nodo;
-        }else if (letra < nodo.getData()){
-            nodo.setIzq(borrar(nodo.getIzq(), letra));
-        }else if (letra > nodo.getData()){
-            nodo.setDer(borrar(nodo.getDer(), letra));
-        }else{
-            if(nodo.getIzq()== null && nodo.getDer()==null){
+        if(nodo == null){
+            return null;
+        }
+        nodo.setIzq(borrar(nodo.getIzq(), letra));
+        nodo.setDer(borrar(nodo.getDer(), letra));
+
+        if(nodo.getData()==letra){
+            if(nodo.getIzq()==null && nodo.getDer()==null){
                 return null;
-            } else if (nodo.getIzq()==null){
+            }else if (nodo.getIzq()==null){
                 return nodo.getDer();
-            } else if (nodo.getDer()==null){
+            }else if (nodo.getDer()==null){
                 return nodo.getIzq();
             }
-            char min_valor = encontrarMin(nodo.getDer());
-            nodo.setData(min_valor);
-            nodo.setDer(borrar(nodo.getDer(), letra));
+            nodo.getIzq().setDer(nodo.getDer());
+            return nodo.getIzq();
         }
+
         return nodo;
+    }
+
+    public static void borrar(ArbolBinario arbol, char letra){
+        arbol.setRaiz(borrar(arbol.getRaiz(), letra));
     }
 
     public static void inOrder(Nodo nodo){
@@ -66,7 +70,13 @@ public class Main {
         System.out.println(search(arbol.getRaiz(), 'G'));
 
         inOrder(arbol.getRaiz());
-        borrar(arbol.getRaiz(), 'D');
+        borrar(arbol, 'D');
+        System.out.println();
+        inOrder(arbol.getRaiz());
+        borrar(arbol, 'B');
+        System.out.println();
+        inOrder(arbol.getRaiz());
+        borrar(arbol, 'A');
         System.out.println();
         inOrder(arbol.getRaiz());
     }

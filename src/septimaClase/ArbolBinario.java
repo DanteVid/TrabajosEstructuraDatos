@@ -11,4 +11,7 @@ public class ArbolBinario {
         Nodo raiz = new Nodo(letra, null, null);
         this.raiz = raiz;
     }
+    public void setRaiz(Nodo nodo) {
+        this.raiz = nodo;
+    }
 }
