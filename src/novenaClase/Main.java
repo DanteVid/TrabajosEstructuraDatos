@@ -1,6 +1,11 @@
 package novenaClase;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Main {
+
+
     public static void main(String[] args) {
         Graph grafo = new Graph();
         grafo.addEdge("A", "B");
@@ -29,5 +34,9 @@ public class Main {
         grafoPonderado.addEdge("C", "D", 30);
         grafoPonderado.printGraph();
 
+        System.out.println();
+
+        Set<String> visited = new HashSet<>();
+        grafo.dfs("A", visited);
     }
 }

@@ -15,9 +15,9 @@ public class WeightedGraph {
     }
 
     public void printGraph() {
+        System.out.println("Tarifas de viajes:");
         for (String vertex : adjList.keySet()) {
-            System.out.print("Costo de los viajes \n ciudad " + vertex + " a la(s) ciudad(es) ");
-            System.out.println(adjList.get(vertex));
+            System.out.println("Ciudad " + vertex + " a la(s) ciudad(es) " +adjList.get(vertex));
         }
     }
 }
